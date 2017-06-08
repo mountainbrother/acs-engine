@@ -639,6 +639,7 @@ func convertMasterProfileToVLabs(api *MasterProfile, vlabsProfile *vlabs.MasterP
 	vlabsProfile.VnetCidr = api.VnetCidr
 	vlabsProfile.SetSubnet(api.Subnet)
 	vlabsProfile.FQDN = api.FQDN
+	vlabsProfile.StorageProfile = api.StorageProfile
 	vlabsProfile.Extensions = []vlabs.Extension{}
 	for _, extension := range api.Extensions {
 		vlabsExtension := &vlabs.Extension{}
