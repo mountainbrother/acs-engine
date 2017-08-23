@@ -181,6 +181,7 @@ type MasterProfile struct {
 	StorageProfile           string      `json:"storageProfile,omitempty"`
 	HTTPSourceAddressPrefix  string      `json:"HTTPSourceAddressPrefix,omitempty"`
 	OAuthEnabled             bool        `json:"oauthEnabled"`
+	PreprovisionExtension    *Extension  `json:"preprovisionExtension"`
 	Extensions               []Extension `json:"extensions"`
 
 	// Master LB public endpoint/FQDN with port
@@ -220,9 +221,10 @@ type AgentPoolProfile struct {
 	Subnet              string `json:"subnet"`
 	IPAddressCount      int    `json:"ipAddressCount,omitempty"`
 
-	FQDN             string            `json:"fqdn,omitempty"`
-	CustomNodeLabels map[string]string `json:"customNodeLabels,omitempty"`
-	Extensions       []Extension       `json:"extensions"`
+	FQDN                  string            `json:"fqdn,omitempty"`
+	CustomNodeLabels      map[string]string `json:"customNodeLabels,omitempty"`
+	PreprovisionExtension *Extension        `json:"preprovisionExtension"`
+	Extensions            []Extension       `json:"extensions"`
 }
 
 // DiagnosticsProfile setting to enable/disable capturing
